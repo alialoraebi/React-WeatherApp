@@ -9,7 +9,6 @@ const useWeatherData = (API_KEY) => {
 
   const fetchWeatherData = (location) => {  
     if (!location) {
-      // Replacing React Native Alert with window.alert
       window.alert('Invalid Input', 'Please enter a city name.');
       return;
     }
@@ -31,7 +30,6 @@ const useWeatherData = (API_KEY) => {
         setLoading(false);
       })
       .catch(error => {
-        // Replacing React Native Alert with window.alert
         window.alert('Error', error.message);
         setError(error.message);
         setLoading(false);
