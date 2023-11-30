@@ -4,7 +4,7 @@ import '../App.css';
 const WeatherDisplay = ({ weatherData }) => {
   const { main, weather, wind, name, dt } = weatherData;
 
-  const temperatureCelsius = (main.temp - 273.15).toFixed(2);
+  const temperatureCelsius = Math.round(main.temp - 273.15);
   const weatherIcon = weather[0].icon;
   const weatherDescription = weather[0].description;
   const windSpeedKmH = (wind.speed * 3.6).toFixed(2);

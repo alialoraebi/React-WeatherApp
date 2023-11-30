@@ -14,12 +14,13 @@ const useWeatherData = (API_KEY) => {
     setLoading(true);
     setError(null);
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
+    const encodedLocation = encodeURIComponent(location);
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodedLocation}&appid=${API_KEY}`;
 
     fetch(url)
       .then(response => {
         if (response.status !== 200) {
-          throw new Error(`${response.status}: ${response.statusText}`);
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
         return response.json();
       })
@@ -28,7 +29,7 @@ const useWeatherData = (API_KEY) => {
         setLoading(false);
       })
       .catch(error => {
-        window.alert('Error', error.message);
+        window.alert(`Error: ${error.message}`); 
         setError(error.message);
         setLoading(false);
       });

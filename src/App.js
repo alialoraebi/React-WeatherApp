@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CityInput from './components/CityInput';
 import useWeatherData from './components/useWeatherData';
-import WeatherDisplay from './components/WeatherDisplay';
+import WeatherDisplay from './components/WeatherCard';
 import './App.css';
 
 export default function App() {
@@ -10,6 +10,7 @@ export default function App() {
 
   return (
     <div className="container">
+      <h1 className="title">Weather App - Ali Al Aoraebi 101386021</h1>
       <CityInput 
         location={location} 
         setLocation={setLocation} 
