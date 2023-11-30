@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import CityInput from './components/CityInput';
+import useWeatherData from './components/useWeatherData';
+import WeatherDisplay from './components/WeatherDisplay';
 import './App.css';
 
-function App() {
+export default function App() {
+  const [location, setLocation] = useState('');
+  const { weatherData, loading, error, fetchWeatherData } = useWeatherData('a45a331110e05d374968f6b3270212e7');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <CityInput 
+        location={location} 
+        setLocation={setLocation} 
+        onSubmit={() => fetchWeatherData(location)} 
+      />
+      {loading && <p className="loading">Loading...</p>}
+      {error && <p className="error">{error}</p>}
+      {weatherData && <WeatherDisplay weatherData={weatherData} />}
     </div>
   );
 }
-
-export default App;
