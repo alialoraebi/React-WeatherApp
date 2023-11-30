@@ -1,15 +1,13 @@
 import { useState } from 'react';
-import '../App.css';
-
 
 const useWeatherData = (API_KEY) => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchWeatherData = (location) => {  
-    if (!location) {
-      window.alert('Invalid Input', 'Please enter a city name.');
+  const fetchWeatherData = (location) => {
+    if (!location.trim()) { 
+      window.alert('Please enter a city name.'); 
       return;
     }
 
