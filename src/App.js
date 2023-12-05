@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <div className="container">
-      <h1 className="title">Weather App - Ali Al Aoraebi 101386021</h1>
+      <h1 className="title">Weather Forecast</h1>
       <CityInput 
         location={location} 
         setLocation={setLocation} 

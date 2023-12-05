@@ -3,7 +3,7 @@ import '../App.css';
 
 const CityInput = ({ location, setLocation, onSubmit }) => {
   return (
-    <div>
+    <div className='search-container'>
       <input 
         type="text"
         className="input"
@@ -11,7 +11,7 @@ const CityInput = ({ location, setLocation, onSubmit }) => {
         onChange={(e) => setLocation(e.target.value)}
         value={location}
       />
-      <button onClick={onSubmit}>Get Weather</button>
+      <button onClick={onSubmit}>Search</button>
     </div>
   );
 };

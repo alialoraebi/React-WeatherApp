@@ -15,7 +15,7 @@ const WeatherDisplay = ({ weatherData }) => {
   const day = date.getDate();
 
   return (
-    <div className="weather-display-container">
+    <div id="weather-display-container">
       <div className="current-weather">
         <div className="date-location">
           <p className="date">{`${dayOfWeek}, ${month} ${day}`}</p>
@@ -28,11 +28,26 @@ const WeatherDisplay = ({ weatherData }) => {
         </div>
       </div>
       <div className="weather-details">
-        <p className="detail-item">Humidity: {main.humidity}%</p>
-        <p className="detail-item">Wind Speed: {windSpeedKmH} km/h</p>
-        <p className="detail-item">Pressure: {main.pressure} mb</p>
-        <p className="detail-item">Max Temp: {(main.temp_max - 273.15).toFixed(2)}°C</p>
-        <p className="detail-item">Min Temp: {(main.temp_min - 273.15).toFixed(2)}°C</p>
+        <p className="detail-item">
+          <span className="detail-name">Humidity</span>
+          <span className="detail-value">{main.humidity}%</span>
+        </p>
+        <p className="detail-item">
+          <span className="detail-name">Wind Speed</span>
+          <span className="detail-value">{windSpeedKmH} km/h</span>
+        </p>
+        <p className="detail-item">
+          <span className="detail-name">Pressure</span>
+          <span className="detail-value">{main.pressure} mb</span>
+        </p>
+        <p className="detail-item">
+          <span className="detail-name">Max Temp</span>
+          <span className="detail-value">{(main.temp_max - 273.15).toFixed(2)}°C</span>
+        </p>
+        <p className="detail-item">
+          <span className="detail-name">Min Temp</span>
+          <span className="detail-value">{(main.temp_min - 273.15).toFixed(2)}°C</span>
+        </p>
       </div>
     </div>
   );
