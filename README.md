@@ -4,16 +4,15 @@
 ### Made by Ali Al Aoraebi
 
 #### Testing with Postman
-![Image description](./postman.png)
+![API Testing](./postman.png)
 
 #### This is how it looked like prior to adding CSS
-![Image description](./pre-css.png)
+![Pre CSS](./pre-css.png)
 
 #### This is how it looked like after adding CSS
 
-![Image description](./post-css.png)
+![Submitted CSS](./post-css.png)
 
+#### Final css design
 
-
-
-
+![Final CSS](post-submission-css.png)
